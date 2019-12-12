@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    
+    
+
+
+    <head>
+    <link href="https://gmpg.org/xfn/11" rel="profile">
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Cache-Control" content="public" />
+<!-- Enable responsiveness on mobile devices -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta name="generator" content="Hugo 0.60.1" />
+
+    
+    
+    
+
+<title>esxi离线打包 • 随风</title>
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="esxi离线打包"/>
+<meta name="twitter:description" content="在安装ESXi 6.7的时候，遇到报错“No Network Adapters”，是因为ESXi没有机器网卡的驱动程序，需要重新打包iso文件"/>
+
+<meta property="og:title" content="esxi离线打包" />
+<meta property="og:description" content="在安装ESXi 6.7的时候，遇到报错“No Network Adapters”，是因为ESXi没有机器网卡的驱动程序，需要重新打包iso文件" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://caopengfei.github.io/post/esxi/offlinepackaging/" />
+<meta property="article:published_time" content="2019-12-09T11:30:26+08:00" />
+<meta property="article:modified_time" content="2019-12-09T11:30:26+08:00" />
+
+
+    
+
+
+
+
+
+
+<link rel="stylesheet" href="/scss/hyde-hyde.92c66d107d7b219f0792cfd67223179af884b03f386ac46894f9f735932bbca3.css" integrity="sha256-ksZtEH17IZ8Hks/WciMXmviEsD84asRolPn3NZMrvKM=">
+
+
+<link rel="stylesheet" href="/scss/print.2744dcbf8a0b2e74f8a50e4b34e5f441be7cf93cc7de27029121c6a09f9e77bc.css" integrity="sha256-J0Tcv4oLLnT4pQ5LNOX0Qb58&#43;TzH3icCkSHGoJ&#43;ed7w=" media="print">
+
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+    <link rel="shortcut icon" href="/favicon.png">
+    
+    
+
+</head>
+
+
+    <body class="theme-base-0d ">
+    
+<div class="sidebar">
+  <div class="container ">
+    <div class="sidebar-about">
+      <span class="site__title">
+        <a href="https://caopengfei.github.io/">随风</a>
+      </span>
+      
+      
+      <p class="site__description">
+        
+      </p>
+    </div>
+    <div class="collapsible-menu">
+      <input type="checkbox" id="menuToggle">
+      <label for="menuToggle">随风</label>
+      <div class="menu-content">
+        <div>
+	<ul class="sidebar-nav">
+		 
+		
+	</ul>
+</div>
+
+        <section class="social">
+	
+	
+	
+	<a href="https://github.com/caopengfei" rel="me"><i class="fab fa-github fa-lg" aria-hidden="true"></i></a>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</section>
+
+      </div>
+    </div>
+    
+
+
+  </div>
+</div>
+
+        <div class="content container">
+            
+    
+<article>
+  <header>
+    <h1>esxi离线打包</h1>
+    
+    
+<div class="post__meta">
+    
+    
+      <i class="fas fa-calendar-alt"></i> Dec 09, 2019
+    
+    
+    
+      
+      
+          in
+          
+          
+              <a class="badge badge-category" href="/categories/%E8%BF%90%E7%BB%B4">运维</a>
+              
+          
+      
+    
+    
+    
+      
+      
+          <br/>
+           <i class="fas fa-tags"></i>
+          
+          <a class="badge badge-tag" href="/tags/esxi">esxi</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/vmware">vmware</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/powercli">powercli</a>
+           
+      
+          <a class="badge badge-tag" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA">虚拟机</a>
+          
+      
+    
+    
+    <br/>
+    <i class="fas fa-clock"></i> 1 min read
+</div>
+
+
+  </header>
+  
+  
+  <div class="post">
+    <p>在安装ESXi 6.7的时候，遇到报错“No Network Adapters”，是因为ESXi没有机器网卡的驱动程序，需要重新打包iso文件，解决步骤如下：</p>
+<ol>
+<li>查找机器网卡型号，在安装的错误提示界面按下 ALT+F1 后输入：</li>
+</ol>
+<pre><code>lspci
+</code></pre><ol start="2">
+<li>确认网卡型号后，去https://vibsdepot.v-front.de/wiki/index.php/List_of_currently_available_ESXi_packages下载对应的网卡驱动程序包</li>
+<li>下载 <a href="ESXi-Customizer-PS">ESXi-Customizer-PS</a></li>
+<li>安装 VMware PowerCLI</li>
+<li>执行命令</li>
+</ol>
+<pre><code>.\ESXi-Customizer-PS-v2.6.0.ps1 -izip .\ESXi670-201905001.zip -pkgDir c:\whsir\
+</code></pre><blockquote>
+<p><a href="https://vibsdepot.v-front.de/wiki/index.php/Welcome"><a href="https://vibsdepot.v-front.de/wiki/index.php/Welcome">https://vibsdepot.v-front.de/wiki/index.php/Welcome</a></a></p>
+</blockquote>
+
+  </div>
+  
+
+<div class="navigation navigation-single">
+    
+    
+</div>
+
+
+  
+
+  
+    
+
+
+</article>
+
+
+        </div>
+        
+    
+
+<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+
+
+    
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
+
+
+
+
+    
+
+
+
+    </body>
+</html>

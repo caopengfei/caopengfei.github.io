@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on 个人笔记</title>
-    <link>https://rakor.github.io/categories/</link>
-    <description>Recent content in Categories on 个人笔记</description>
+    <title>Categories on 随风</title>
+    <link>https://caopengfei.github.io/categories/</link>
+    <description>Recent content in Categories on 随风</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 09 Dec 2019 11:30:26 +0800</lastBuildDate>
     
-	<atom:link href="https://rakor.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://caopengfei.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>运维</title>
+      <link>https://caopengfei.github.io/categories/%E8%BF%90%E7%BB%B4/</link>
+      <pubDate>Mon, 09 Dec 2019 11:30:26 +0800</pubDate>
+      
+      <guid>https://caopengfei.github.io/categories/%E8%BF%90%E7%BB%B4/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

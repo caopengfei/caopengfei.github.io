@@ -1,14 +1,51 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on 个人笔记</title>
-    <link>https://rakor.github.io/tags/</link>
-    <description>Recent content in Tags on 个人笔记</description>
+    <title>Tags on 随风</title>
+    <link>https://caopengfei.github.io/tags/</link>
+    <description>Recent content in Tags on 随风</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 09 Dec 2019 11:30:26 +0800</lastBuildDate>
     
-	<atom:link href="https://rakor.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://caopengfei.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>esxi</title>
+      <link>https://caopengfei.github.io/tags/esxi/</link>
+      <pubDate>Mon, 09 Dec 2019 11:30:26 +0800</pubDate>
+      
+      <guid>https://caopengfei.github.io/tags/esxi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PowerCLI</title>
+      <link>https://caopengfei.github.io/tags/powercli/</link>
+      <pubDate>Mon, 09 Dec 2019 11:30:26 +0800</pubDate>
+      
+      <guid>https://caopengfei.github.io/tags/powercli/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>VMware</title>
+      <link>https://caopengfei.github.io/tags/vmware/</link>
+      <pubDate>Mon, 09 Dec 2019 11:30:26 +0800</pubDate>
+      
+      <guid>https://caopengfei.github.io/tags/vmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>虚拟机</title>
+      <link>https://caopengfei.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</link>
+      <pubDate>Mon, 09 Dec 2019 11:30:26 +0800</pubDate>
+      
+      <guid>https://caopengfei.github.io/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

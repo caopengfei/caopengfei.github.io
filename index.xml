@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>个人笔记</title>
-    <link>https://rakor.github.io/</link>
-    <description>Recent content on 个人笔记</description>
+    <title>随风</title>
+    <link>https://caopengfei.github.io/</link>
+    <description>Recent content on 随风</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 09 Dec 2019 11:30:26 +0800</lastBuildDate>
     
-	<atom:link href="https://rakor.github.io/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://caopengfei.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Test</title>
-      <link>https://rakor.github.io/post/test/</link>
+      <title>esxi离线打包</title>
+      <link>https://caopengfei.github.io/post/esxi/offlinepackaging/</link>
       <pubDate>Mon, 09 Dec 2019 11:30:26 +0800</pubDate>
       
-      <guid>https://rakor.github.io/post/test/</guid>
-      <description>hello world dsfdsfsdfs </description>
+      <guid>https://caopengfei.github.io/post/esxi/offlinepackaging/</guid>
+      <description>在安装ESXi 6.7的时候，遇到报错“No Network Adapters”，是因为ESXi没有机器网卡的驱动程序，需要重新打包iso文件，解决步骤如下：
+ 查找机器网卡型号，在安装的错误提示界面按下 ALT+F1 后输入：  lspci 确认网卡型号后，去https://vibsdepot.v-front.de/wiki/index.php/List_of_currently_available_ESXi_packages下载对应的网卡驱动程序包 下载 ESXi-Customizer-PS 安装 VMware PowerCLI 执行命令  .\ESXi-Customizer-PS-v2.6.0.ps1 -izip .\ESXi670-201905001.zip -pkgDir c:\whsir\  https://vibsdepot.v-front.de/wiki/index.php/Welcome
+ </description>
     </item>
     
   </channel>
