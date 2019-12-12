@@ -35,6 +35,11 @@
     
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+
+
+
+
 
 
 
@@ -55,7 +60,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
     <link rel="shortcut icon" href="/favicon.png">
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+    
 
 </head>
 
@@ -109,6 +114,13 @@
       </div>
     </div>
     
+<div class="copyright">
+  &copy; 2019 htr3n
+  
+    <a href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a>
+  
+</div>
+
 
 
   </div>
@@ -173,15 +185,15 @@
 <ol>
 <li>查找机器网卡型号，在安装的错误提示界面按下 ALT+F1 后输入：</li>
 </ol>
-<pre><code>lspci
-</code></pre><ol start="2">
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">lspci
+</code></pre></div><ol start="2">
 <li>确认网卡型号后，去https://vibsdepot.v-front.de/wiki/index.php/List_of_currently_available_ESXi_packages下载对应的网卡驱动程序包</li>
 <li>下载 <a href="ESXi-Customizer-PS">ESXi-Customizer-PS</a></li>
 <li>安装 VMware PowerCLI</li>
 <li>执行命令</li>
 </ol>
-<pre><code>.\ESXi-Customizer-PS-v2.6.0.ps1 -izip .\ESXi670-201905001.zip -pkgDir c:\whsir\
-</code></pre><blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">.<span style="color:#ae81ff">\E</span>SXi-Customizer-PS-v2.6.0.ps1 -izip .<span style="color:#ae81ff">\E</span>SXi670-201905001.zip -pkgDir c:<span style="color:#ae81ff">\w</span>hsir<span style="color:#ae81ff">\
+</span></code></pre></div><blockquote>
 <p><a href="https://vibsdepot.v-front.de/wiki/index.php/Welcome"><a href="https://vibsdepot.v-front.de/wiki/index.php/Welcome">https://vibsdepot.v-front.de/wiki/index.php/Welcome</a></a></p>
 </blockquote>
 
@@ -207,8 +219,18 @@
         
     
 
-<script defer src="https://use.fontawesome.com/releases/v5.5.0/js/all.js" integrity="sha384-GqVMZRt5Gn7tB9D9q7ONtcp4gtHIUEW/yG7h98J7IpE3kpi+srfFyyB/04OV6pG0" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/font-awesome/5.11.2/js/all.min.js"></script>
 
+    
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+        
+    
+    <script type="text/javascript">
+        
+        hljs.initHighlightingOnLoad();
+    </script>
+    
 
 
 
